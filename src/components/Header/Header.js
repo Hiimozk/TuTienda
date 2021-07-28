@@ -13,11 +13,10 @@ import {Navbar,
         <Navbar bg="primary" variant="dark">
         <Container>
             <Row>
-                <Navbar.Brand href="#home">Tienda!</Navbar.Brand>
+                <Navbar.Brand href="#home">Tu Tienda!</Navbar.Brand>
                 <Nav className="me-auto">
-                <Nav.Link href="#home">Inicio</Nav.Link>
                 <Nav.Link href="#features">Compras</Nav.Link>
-                <Nav.Link href="#pricing">Historia</Nav.Link>
+                <Nav.Link href="#pricing">Historial</Nav.Link>
                 </Nav>
             </Row>
         <CartWidget/>
