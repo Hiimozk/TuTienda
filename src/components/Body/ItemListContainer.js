@@ -12,7 +12,7 @@ const ItemListContainer = () => {
             ///operacion.then pasa cuando todo esta bien
             promesa.then((DataItems)=>{
                 console.log("Bien");
-                console.log(DataItems)
+                
                 /* DataItems */
             })
             //operacion. finally pasa siempre
@@ -23,7 +23,7 @@ const ItemListContainer = () => {
         
      
         return(
-                <ItemList DataItems/>
+                <ItemList DataItems={DataItems}/>
         );
                   
      

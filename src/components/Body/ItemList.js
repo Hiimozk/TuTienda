@@ -4,15 +4,20 @@ import Item from './Item'
 
 
 
-const ItemList = (data) => {
-/*     data.map ((Items)=>(
-    <Item id={Items.id} title={Items.title} price={Items.price} stock={Items.stock}/>)
-    )  */
+const ItemList = ({DataItems}) => {
     return(
-        console.log(data)
+        <>
+        {DataItems.map(Item =>{
+            return <Item id={Item.id} title={Item.title} price={Item.price} stock={Item.stock}/>
+        
+            
+        })}
+        </>
+        )
+        
 
-    )
-
-}
+    
+        
+    }
 
 export default ItemList
