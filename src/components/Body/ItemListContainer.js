@@ -1,17 +1,34 @@
-import ItemCount from "./ItemCount"
+import React from 'react';
+import DataItems from  '../../data/items.json'
+import ItemList from './ItemList';
 
-
-      const ItemListContainer = ({greeting}) => {
-                    const onAdd = (cantidad) => {
-                    console.log(cantidad)
-            }
+const ItemListContainer = () => {
+       
+            const promesa = new Promise((resolver, rechazar)=>{
+                setTimeout(()=>{
+                    resolver(DataItems);  
+                } , 2000); 
+            })
+            ///operacion.then pasa cuando todo esta bien
+            promesa.then((DataItems)=>{
+                console.log("Bien");
+                console.log(DataItems)
+                /* DataItems */
+            })
+            //operacion. finally pasa siempre
+            //operacion. catch cuando todo esta mal
+            promesa.catch(()=>{
+                console.log("Mal");
+            })
         
-            return(
-                <div>
-                    <p>{greeting}</p>
-                    <ItemCount stock={5} initial={1} onAdd={onAdd}/>
-                </div>
-            )
-        }
+     
+        return(
+                <ItemList DataItems/>
+        );
+                  
+     
+       
+            
+    }
   
   export default ItemListContainer

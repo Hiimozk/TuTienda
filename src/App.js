@@ -12,10 +12,6 @@ const App=()=>{
     <>
     <Header/>
     <ItemListContainer/>
-    <ItemListContainer/>
-    
-  
-
     </>
     )
 }
