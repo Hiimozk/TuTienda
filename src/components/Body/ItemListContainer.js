@@ -1,9 +1,9 @@
-import React from 'react';
+import React , { useState } from 'react';
 import DataItems from  '../../data/items.json'
 import ItemList from './ItemList';
 
 const ItemListContainer = () => {
-       
+    const [mostrar, setMostrar] = useState(0);
             const promesa = new Promise((resolver, rechazar)=>{
                 setTimeout(()=>{
                     resolver(DataItems);  
@@ -11,6 +11,8 @@ const ItemListContainer = () => {
             })
             ///operacion.then pasa cuando todo esta bien
             promesa.then((DataItems)=>{
+                
+                
                 console.log("Bien");
                 
                 /* DataItems */
@@ -23,7 +25,7 @@ const ItemListContainer = () => {
         
      
         return(
-                <ItemList DataItems={DataItems}/>
+                <ItemList DataItems= {DataItems}/>
         );
                   
      

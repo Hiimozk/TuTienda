@@ -7,11 +7,10 @@ import Item from './Item'
 const ItemList = ({DataItems}) => {
     return(
         <>
-        {DataItems.map(Item =>{
-            return <Item id={Item.id} title={Item.title} price={Item.price} stock={Item.stock}/>
-        
-            
+         {DataItems.map(item =>{
+            return <Item id={item.id} title={item.title} price={item.price} stock={item.stock}/>   
         })}
+
         </>
         )
         
