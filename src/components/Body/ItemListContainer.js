@@ -1,17 +1,19 @@
-import React , { useState } from 'react';
-import DataItems from  '../../data/items.json'
+import React , { useState, useEffect } from 'react';
+import productos from  '../../data/productos.json'
 import ItemList from './ItemList';
 
 const ItemListContainer = () => {
     const [mostrar, setMostrar] = useState([]);
+    
             const promesa = new Promise((resolver, rechazar)=>{
                 setTimeout(()=>{
-                    resolver(DataItems);  
+                    resolver(productos);  
                 } , 2000); 
             })
+            useEffect(() => {
             ///operacion.then pasa cuando todo esta bien
-            promesa.then((DataItems)=>{
-                setMostrar(DataItems)
+            promesa.then((productos)=>{
+                setMostrar(productos)
                 
                 
                 console.log("Bien");
@@ -23,6 +25,8 @@ const ItemListContainer = () => {
             promesa.catch(()=>{
                 console.log("Mal");
             })
+        },[])
+        
         
      
         return(
