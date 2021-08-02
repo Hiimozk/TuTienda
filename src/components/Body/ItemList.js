@@ -4,10 +4,10 @@ import Item from './Item'
 
 
 
-const ItemList = ({DataItems}) => {
+const ItemList = ({mostrar}) => {
     return(
         <>
-         {DataItems.map(item =>{
+         {mostrar.map(item =>{
             return <Item id={item.id} title={item.title} price={item.price} stock={item.stock}/>   
         })}
 
