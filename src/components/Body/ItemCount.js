@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import Button from 'react-bootstrap/Button';
 
 const ItemCount = ({ stock , initial , onAdd }) => {
 
@@ -24,10 +25,10 @@ const ItemCount = ({ stock , initial , onAdd }) => {
 
     return (
         <>
-            <p>Contador Actual : {contador}</p>
-            <button onClick={aumentarContador}>sumar</button>
-            <button onClick={restarContador}>restar</button>
-            <button onClick={confirmar}>confirmar</button>
+            <p>Cantidad : {contador}/{stock}</p>
+            <Button className="m-2" variant="success"  onClick={aumentarContador}>+</Button>
+            <Button className="m-2" variant="danger" onClick={restarContador}>-</Button>
+            <Button className="m-2"onClick={confirmar}>Confirmar</Button>
         </>
     )
 

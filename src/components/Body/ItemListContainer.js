@@ -1,5 +1,5 @@
 import React , { useState, useEffect } from 'react';
-import productos from  '../../data/productos.json'
+import productos from  '../../data/productos'
 import ItemList from './ItemList';
 
 const ItemListContainer = () => {
