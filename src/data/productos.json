@@ -4,20 +4,20 @@
     "title":"Parrillero",
     "price": 25000,
     "stock":10,
-    "img":""
+    "img":"https://estufashierrolena.com/wp-content/uploads/2019/04/parrillero.jpg"
 },
 {
     "id":2,
     "title":"Puerta",
     "price": 5000,
     "stock":15,
-    "img":"parrillero.png"
+    "img":"https://www.lhermetique.com/wp-content/uploads/sites/14/2020/02/IMAGEN-PUERTA2.jpg"
 },
 {
     "id":3,
     "title":"Auto",
     "price": 75000,
     "stock":3,
-    "img":"./parrillero.png"
+    "img":"https://motorsports.com.uy/wp-content/uploads/ibiza_.jpg"
 }
 ]
