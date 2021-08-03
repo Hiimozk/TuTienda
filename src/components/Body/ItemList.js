@@ -11,6 +11,7 @@ const ItemList = ({mostrar}) => {
         <>
         <Container>
         <Row>
+            
          {mostrar.map(item =>{
             return <Item id={item.id} title={item.title} price={item.price} stock={item.stock} img={item.img}/>   
         })}

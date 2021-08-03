@@ -3,6 +3,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import ItemCount from './ItemCount';
 import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col'
+import Nav from 'react-bootstrap/Nav'
+import ItemDetail from './ItemDetail';
 
 
 
@@ -15,10 +17,11 @@ const Item = ({id,title,price,stock,img}) =>{
 
     return(
         <>
-        
-            <Col>
-            <Card style={{ width: '18rem' }}>
             
+            <Col>
+            
+            <Card style={{ width: '18rem' }}>
+            <Nav.Link onClick={()=><ItemDetail id={id} />}>
             <Card.Body>
             <Card.Img variant="top" style={{height:'10rem'}} src={img}/>
                 <h1>{id}</h1>
@@ -28,8 +31,11 @@ const Item = ({id,title,price,stock,img}) =>{
                 <ItemCount stock={stock} initial={1} onAdd={onAdd} />
                 
             </Card.Body>
+            </Nav.Link>
             </Card>
+            
             </Col>
+            
             
             
        
