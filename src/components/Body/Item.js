@@ -44,11 +44,6 @@ const Item = ({id,title,price,stock,img}) =>{
         
         </>
     )
-
-        
-    
-
-
     
 }
 

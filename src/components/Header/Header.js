@@ -7,13 +7,16 @@ import {Navbar,
         Row,
         
         } from 'react-bootstrap';
+import {Link} from 'react-router-dom'
 
     const Header = () =>
     
         <Navbar bg="primary" variant="dark">
         <Container>
             <Row>
-                <Navbar.Brand href="#home">Tu Tienda!</Navbar.Brand>
+            <Link>
+                <Navbar.Brand>Tu Tienda!</Navbar.Brand>
+                </Link>
                 <Nav className="me-auto">
                 <Nav.Link href="#features">Compras</Nav.Link>
                 <Nav.Link href="#pricing">Historial</Nav.Link>

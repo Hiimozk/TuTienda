@@ -1,21 +1,21 @@
 import React from 'react';
 
 
-const ItemDetail = ({id,title,price,stock,img}) => {
-    console.log(id)
+const ItemDetail = ({item}) => {
+    console.log(item)
     return(
-        console.log(id)
+        <>
+       
+        <h1> {item.id} </h1>
+        <h2>{item.title}</h2>
+        <h3>{item.price}</h3>
+        <img src={item.img}></img>
+        </>
         
         
         
-        
-
-
 
     )
-
-
-
 
 
 
