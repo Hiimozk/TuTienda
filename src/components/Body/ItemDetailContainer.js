@@ -1,31 +1,36 @@
 import React   from 'react';
-import Item from './Item'
 import { useState, useEffect } from 'react';
 import ItemDetail from './ItemDetail'
+import productos from  '../../data/productos'
+import {useParams} from "react-router-dom"
 
 
-const init ={id: 4, title: "p4", description:"asdasd" , price: 2500, img:"https://www.lhermetique.com/wp-content/uploads/sites/14/2020/02/IMAGEN-PUERTA2.jpg"}
 
-const ItemDetailContainer = () =>{
 
-    const [item,setItem] = useState(false)
-    useEffect(() => {
+function ItemDetailContainer() {
+    const [producto, setProducto] = useState({});
+    const { id: id } = useParams();
+  
+    const getItems = () => {
+      return new Promise((resolve, reject) => {
+        const buscarProducto = productos.find(
+          (item) => item.id === parseInt(id)
+        );
         setTimeout(() => {
-        Promise
-            .resolve(init)
-            .then(response => {
-                setItem(response)
-            })
-        }, 2000)
-
-    },[])
-    return(
-        <div>
-        <h1>Detalle Item</h1>
-        <ItemDetail item={item}/>
-        </div>
-        
-    )
-}
-
-export default ItemDetailContainer 
+          resolve(buscarProducto);
+          reject("errorp");
+        }, 2000);
+      });
+    };
+  
+    useEffect(() => {
+      setProducto({});
+      getItems()
+        .then((res) => setProducto(res))
+        .catch((Error) => console.log(Error));
+    }, [id]);
+  
+    return <ItemDetail item={producto} />;
+  }
+  
+  export default ItemDetailContainer;

@@ -1,51 +1,37 @@
-import React , { useState, useEffect } from 'react';
-import productos from  '../../data/productos'
-import ItemList from './ItemList';
-import {useParams} from "react-router-dom"
+import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
+import ItemList from "./ItemList";
+import misProductos from  '../../data/productos'
 
-const ItemListContainer = () => {
-    const [mostrar, setMostrar] = useState([]);
-    const params = useParams()
-    console.log(params)
-    
-    
-            const promesa = new Promise((resolver, rechazar)=>{
-                setTimeout(()=>{
-                    if(params.id){
-                        resolver(productos.filter(producto=>producto.categoria == params.id))
-                    }
-                    else{
-                        resolver(productos)
-                    }
-                    resolver(productos);  
-                } , 2000); 
-            })
-            useEffect(() => {
-            ///operacion.then pasa cuando todo esta bien
-            promesa.then((productos)=>{
-                setMostrar(productos)
-                
-                
-                console.log("Bien");
-                
-                /* DataItems */
-            })
-            //operacion. finally pasa siempre
-            //operacion. catch cuando todo esta mal
-            promesa.catch(()=>{
-                console.log("Mal");
-            })
-        },[])
-        
-        
-     
-        return(
-                <ItemList mostrar= {mostrar}/>
-        );
-                  
-     
-       
-            
-    }
-  
-  export default ItemListContainer
+function ItemListContainer() {
+  const [productos, setProductos] = useState([]);
+  const { id: idCategory } = useParams();
+
+  const getItems = () => {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        if (idCategory) {
+          const filtroCategory = misProductos.filter(
+            (producto) => producto.categoria === idCategory
+          );
+          resolve(filtroCategory);
+        } else {
+          resolve(misProductos);
+        }
+
+        reject("error al traer productos");
+      }, 2000);
+    });
+  };
+
+  useEffect(() => {
+    setProductos([]);
+    getItems()
+      .then((res) => setProductos(res))
+      .catch((acaHayError) => console.log(acaHayError));
+  }, [idCategory]);
+
+  return <ItemList productos={productos} />;
+}
+
+export default ItemListContainer;

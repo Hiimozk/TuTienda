@@ -5,7 +5,7 @@
     "price": 25000,
     "stock":10,
     "img":"https://estufashierrolena.com/wp-content/uploads/2019/04/parrillero.jpg",
-    "categoria":1
+    "categoria":"1"
 },
 {
     "id":2,
@@ -13,7 +13,7 @@
     "price": 5000,
     "stock":15,
     "img":"https://www.lhermetique.com/wp-content/uploads/sites/14/2020/02/IMAGEN-PUERTA2.jpg",
-    "categoria":1
+    "categoria":"1"
 },
 {
     "id":3,
@@ -21,6 +21,6 @@
     "price": 75000,
     "stock":3,
     "img":"https://motorsports.com.uy/wp-content/uploads/ibiza_.jpg",
-    "categoria":2
+    "categoria":"2"
 }
 ]

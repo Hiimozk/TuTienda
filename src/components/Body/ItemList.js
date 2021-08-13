@@ -6,15 +6,16 @@ import Row from 'react-bootstrap/Row'
 
 
 
-const ItemList = ({mostrar}) => {
+const ItemList = ({productos}) => {
     return(
         <>
         <Container>
         <Row>
-            
-         {mostrar.map(item =>{
+        
+         {productos.map(item =>{
             return <Item id={item.id} title={item.title} price={item.price} stock={item.stock} img={item.img}/>   
         })}
+
         </Row>
         </Container>
 
