@@ -5,21 +5,23 @@ import {Navbar,
         Container,
         Nav,
         Row,
+        LinkContainer,
         
         } from 'react-bootstrap';
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
     const Header = () =>
     
-        <Navbar bg="primary" variant="dark">
+        <Navbar bg="danger" variant="dark">
         <Container>
             <Row>
-            <Link>
+            <Link to="/">
                 <Navbar.Brand>Tu Tienda!</Navbar.Brand>
                 </Link>
                 <Nav className="me-auto">
-                <Nav.Link href="#features">Compras</Nav.Link>
-                <Nav.Link href="#pricing">Historial</Nav.Link>
+                    
+                <Nav.Link ><Link to="/categoria/1">Categoria 1</Link></Nav.Link>
+                <Nav.Link ><Link to="/categoria/2">Categoria 2</Link></Nav.Link>
                 </Nav>
             </Row>
         <CartWidget/>

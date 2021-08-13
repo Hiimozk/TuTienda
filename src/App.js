@@ -3,7 +3,7 @@ import Header from './components/Header/Header';
 import "bootstrap/dist/css/bootstrap.min.css";
 import ItemListContainer from './components/Body/ItemListContainer';
 import ItemDetailContainer from './components/Body/ItemDetailContainer';
-import {BrowserRouter} from 'react-router-dom'
+import {BrowserRouter, Route, Switch} from 'react-router-dom'
 
 
 
@@ -15,8 +15,10 @@ const App=()=>{
     <>
     <BrowserRouter>
     <Header/>
-    <ItemListContainer/>
-    <ItemDetailContainer />
+    <Switch>
+        <Route path="/" component={ItemListContainer} exact/>
+        <Route path="/categoria/:id" component={ItemListContainer}/>  
+    </Switch> 
     </BrowserRouter>
     </>
     )

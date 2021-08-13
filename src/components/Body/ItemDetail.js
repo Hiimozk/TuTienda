@@ -2,7 +2,7 @@ import React from 'react';
 
 
 const ItemDetail = ({item}) => {
-    console.log(item)
+    
     return(
         <>
        
