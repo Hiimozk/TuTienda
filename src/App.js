@@ -17,7 +17,8 @@ const App=()=>{
     <Header/>
     <Switch>
         <Route path="/" component={ItemListContainer} exact/>
-        <Route path="/categoria/:id" component={ItemListContainer}/>  
+        <Route path="/categoria/:id" component={ItemListContainer}/>
+        <Route path="/item/:id" component={ItemDetailContainer}/>    
     </Switch> 
     </BrowserRouter>
     </>
