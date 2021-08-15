@@ -29,7 +29,7 @@ const ItemCount = ({ stock , initial , onAdd }) => {
             <p>Cantidad : {contador}/{stock}</p>
             <Button className="m-2" variant="success"  onClick={aumentarContador}>+</Button>
             <Button className="m-2" variant="danger" onClick={restarContador}>-</Button>
-            <Link to="/cart"><Button className="m-2"onClick={confirmar}>Confirmar</Button></Link>
+            <Link><Button className="m-2"onClick={confirmar}>Confirmar</Button></Link>
         </>
     )
 
