@@ -19,6 +19,7 @@ const ItemDetail = ({item}) => {
         <h2>{item.title}</h2>
         <h3>{item.price}</h3>
         <img src={item.img}></img>
+        <br/>
         <ItemCount stock={item.stock} initial={item.stock >= 1?1:0} onAdd={onAdd} />
         <Button className="m-2" variant="success"  >Terminar compra</Button>
         
